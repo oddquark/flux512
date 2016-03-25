@@ -52,8 +52,14 @@ void encrypt_block(char *in, char *out, vector<Sbox> &sArray, vector<Pbox> &pArr
 void encrypt(string iFile, string oFile, string password)
 {
 	// init iv
+	char randomPool[128];
+	modIv(randomPool);
+
 	char iv[64];
-	modIv(iv);
+	char paddingPool[64];
+
+	memcpy(randomPool, iv, sizeof iv);
+	memcpy(randomPool + 64, paddingPool, sizeof paddingPool);
 
 	// init s-boxes
 	string sKey;
@@ -102,7 +108,7 @@ void encrypt(string iFile, string oFile, string password)
 	string::size_type psz;
 	while(sz % 64 != 0)
 	{
-		padding.push_back(0);
+		padding.push_back(paddingPool[c]);
 		psz = padding.size();
 		sz = psz + size + 4;
 		c++;
