@@ -126,15 +126,12 @@ void getPass(string &out, bool isRepeat)
 // the halves of the hash are xored to produce the iv (64)
 void modIv(char * iv)
 {
-	char tmp[64];
-	memcpy(tmp, iv, sizeof tmp);
-
 	initscr();
 	start_color();
 	cbreak();
 	noecho();
 	keypad(stdscr, TRUE);
-
+	curs_set(0);
 	string random_pool;
 	bool ex = false;
 	while (ex == false)
@@ -142,33 +139,29 @@ void modIv(char * iv)
 		clear();
 		mvprintw(1,0,"Type randomly on the keyboard to seed the iv.");
 		mvprintw(5,0,"Press Enter when finished.");
-		mvprintw(3,0,"iv:");
 
 		string s = sha512(random_pool);
 		string a = s.substr(0, 8);
 		string b = s.substr(8,8);
 		string c = s.substr(16,8);
-		string d = s.substr(32,8);
+		string d = s.substr(24,8);
+		string e = s.substr(32,8);
 
-		mvprintw(3,5,a.c_str());
-		mvprintw(3,15,b.c_str());
-		mvprintw(3,25,c.c_str());
-		mvprintw(3,35,d.c_str());
+		mvprintw(3,0,a.c_str());
+		mvprintw(3,9,b.c_str());
+		mvprintw(3,18,c.c_str());
+		mvprintw(3,27,d.c_str());
+		mvprintw(3,36,e.c_str());
+		mvprintw(3,44,"...");
 
 		char ch = getch();
 
 		if (int(ch) == '\n')
 		{
-			char a[64];
-			char b[64];
-
-			for(int i = 0; i < 64; i++)
+			for(int i = 0; i < 128; i++)
 			{
-				a[i] = s[i];
-				b[i] = s[i+64];
+				iv[i] = s[i];
 			}
-			xor_block(a, b,iv, 64);
-			ex = false;
 			break;
 		}
 		random_pool += ch;
