@@ -7,7 +7,6 @@
 
 #include "flux.h"
 #include <fstream>
-#include <vector>
 #include <iostream>
 
 using std::cout;
