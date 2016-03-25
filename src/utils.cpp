@@ -140,9 +140,9 @@ void modIv(char * iv)
 	while (ex == false)
 	{
 		clear();
-		mvprintw(2,0,"Type randomly on the keyboard to seed the iv.");
-		mvprintw(3,0,"Press Enter when finished.");
-		mvprintw(20,0,"iv:");
+		mvprintw(1,0,"Type randomly on the keyboard to seed the iv.");
+		mvprintw(5,0,"Press Enter when finished.");
+		mvprintw(3,0,"iv:");
 
 		string s = sha512(random_pool);
 		string a = s.substr(0, 8);
@@ -150,10 +150,10 @@ void modIv(char * iv)
 		string c = s.substr(16,8);
 		string d = s.substr(32,8);
 
-		mvprintw(20,5,a.c_str());
-		mvprintw(20,15,b.c_str());
-		mvprintw(20,25,c.c_str());
-		mvprintw(20,35,d.c_str());
+		mvprintw(3,5,a.c_str());
+		mvprintw(3,15,b.c_str());
+		mvprintw(3,25,c.c_str());
+		mvprintw(3,35,d.c_str());
 
 		char ch = getch();
 
