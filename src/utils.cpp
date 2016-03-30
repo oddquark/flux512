@@ -121,9 +121,7 @@ void getPass(string &out, bool isRepeat)
 	}
 }
 
-// get initialization vector from user..
-// the string from the user is hashed with sha512..
-// the halves of the hash are xored to produce the iv (64)
+// get initialization vector seed from user.
 void modIv(char * iv)
 {
 	initscr();
