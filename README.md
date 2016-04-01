@@ -15,7 +15,6 @@ B1 is fed into the F function. The result is xored with B0. The result from this
 
 # Build/Run
 ```
-
 user@system:~/ git clone https://github.com/oddquark/flux512
 user@system:~/ cd flux512
 user@system:~/ mkdir build
