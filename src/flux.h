@@ -45,7 +45,6 @@ void genIv(char *);
 void encrypt(string, string, string);
 void decrypt(string, string, string);
 void xor_block(char *,char *,char *, int);
-char randChar();
 void getPass(string &, bool);
 void modIv(char * iv);
 void mismatch();
