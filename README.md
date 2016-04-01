@@ -8,10 +8,10 @@ Flux512 uses 256 substitution boxes, and 256 permutation boxes in order to achie
 
 The SHA512 hash algorithm is used to generate key material from the password. This key material is used to initialize the substitution and permutation boxes, and the round key array.
 
-The substitution and permutation boxes lie at the heart of the F function. The F function accepts a block of 32 characters and performs substitution on each character with 32 s-boxes that are chosen according to the round key. After the substitution is done, a single permutation box is chosen. The positions of the characters within the block are reordered according to the p-box.
+The substitution and permutation boxes lie at the heart of the F function. The F function accepts a block of 32 characters and performs substitution on each character with 32 s-boxes, each of which are chosen according to the current character in the round key. After the substitution is done, a single permutation box is chosen. The positions of the characters within the block are reordered according to the p-box.
 
-The F function is the main component of the Feistel network. An input block of 64 characters is split in half (B0 and B1).
-B1 is fed into the F function. The result is xored with B0. The result from the xor operation becomes the new B1. The old B1 becomes the new B0 (unencrypted). This is repeated for each round.
+The F function is the main component of the Feistel network. An input block of 64 characters is xored with the initialization vector before being split in half (B0 and B1).
+B1 is fed into the F function. The result is xored with B0. The result from this xor operation becomes the new B1. The old B1 becomes the new B0 (unencrypted). This is repeated for each round.
 
 # Build/Run
 ```
