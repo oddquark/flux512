@@ -2,6 +2,10 @@
 
 Flux512 is a 16 round <a href="https://en.wikipedia.org/wiki/Feistel_cipher">Feistel Network</a> cipher with a 512-bit block size. 
 
+#Warning
+
+This block cipher is most likely insecure and should not be used.
+
 # About
 
 Flux512 uses 256 substitution boxes, and 256 permutation boxes in order to achieve <a href="https://en.wikipedia.org/wiki/Confusion_and_diffusion">Shannons Confusion/Diffusion.</a> The substitution and permutation boxes are key dependent.
@@ -35,9 +39,7 @@ user@system:~/ ./flux512 -d <infile> <outfile>
 
 ```
 
-#Warning
 
-This block cipher is experimental and should not be used for your security.
-
-If you find any cryptographic attacks or bugs/exploits please contact me.   
+If you find any cryptographic attacks, bugs/exploits, undefined behavior, 
+or just plain old bad code, I would love to hear about it. 
 
