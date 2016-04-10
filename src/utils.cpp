@@ -64,7 +64,7 @@ void usage()
 // init the round key array
 void init_key_array(KeyArray &keyArray, int rounds)
 {
-	for(int i = 0; i <  4; i++)
+	for(int i = 0; i <  rounds/4; i++)
 	{
 		string s = genKey("");
 		keyArray.push_back(s.substr(0, 32));
