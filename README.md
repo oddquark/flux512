@@ -17,8 +17,13 @@ The substitution and permutation boxes lie at the heart of the F function. The F
 The F function is the main component of the Feistel network. An input block of 64 characters is xored with the initialization vector before being split in half (B0 and B1).
 B1 is fed into the F function. The result is xored with B0. The result from this xor operation becomes the new B1. The old B1 becomes the new B0 (unencrypted). This is repeated for each round.
 
-# Build/Run
+# Build
+
+Requires: cmake, ncurses
+
+#####Debian/Ubuntu:
 ```
+user@system:~/ sudo apt-get install libncurses5-dev cmake
 user@system:~/ git clone https://github.com/oddquark/flux512
 user@system:~/ cd flux512
 user@system:~/ mkdir build
@@ -27,7 +32,7 @@ user@system:~/ cmake ../
 user@system:~/ make
 ```
 
-# Usage
+# Run
 
 Encrypt
 ```
@@ -38,8 +43,3 @@ Decrypt
 user@system:~/ ./flux512 -d <infile> <outfile>
 
 ```
-
-
-If you find any cryptographic attacks, bugs/exploits, undefined behavior, 
-or just plain old bad code, I would love to hear about it. 
-
