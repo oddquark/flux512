@@ -41,7 +41,6 @@ void init_key_array(KeyArray &, int);
 void invert_key_array(KeyArray &);
 void sBlock(char *, char *, string &, vector<Sbox> &);
 void f(char *, char *, vector<Sbox> &, vector<Pbox> &, string &);
-void genIv(char *);
 void encrypt(string, string, string);
 void decrypt(string, string, string);
 void xor_block(char *,char *,char *, int);
