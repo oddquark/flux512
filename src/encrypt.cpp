@@ -58,8 +58,8 @@ void encrypt(string iFile, string oFile, string password)
 	char iv[64];
 	char paddingPool[64];
 
-	memcpy(randomPool, iv, sizeof iv);
-	memcpy(randomPool + 64, paddingPool, sizeof paddingPool);
+	memcpy(iv, randomPool, sizeof iv);
+	memcpy(paddingPool, randomPool + 64, sizeof paddingPool);
 
 	// init s-boxes
 	string sKey;
