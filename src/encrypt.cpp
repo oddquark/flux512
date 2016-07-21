@@ -9,9 +9,7 @@
 #include "sha512/sha512.h"
 #include <string.h>
 #include <fstream>
-#include <vector>
 
-using std::vector;
 using std::string;
 
 union {
