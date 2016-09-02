@@ -4,7 +4,7 @@ Flux512 is a 16 round <a href="https://en.wikipedia.org/wiki/Feistel_cipher">Fei
 
 #Warning
 
-This block cipher is most likely insecure and should not be used.
+This block cipher is most likely insecure and should not be used to encrypt anything important.
 
 # About
 
