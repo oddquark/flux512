@@ -2,7 +2,7 @@
 
 Flux512 is a 16 round <a href="https://en.wikipedia.org/wiki/Feistel_cipher">Feistel Network</a> cipher with a 512-bit block size. 
 
-#Warning
+# Warning
 
 This block cipher is most likely insecure and should not be used to encrypt anything important.
 
@@ -16,7 +16,7 @@ The SHA512 hash algorithm is used to generate key material from the password. Th
 
 Requires: cmake, ncurses
 
-#####Debian/Ubuntu:
+##### Debian/Ubuntu:
 ```
 user@system:~/ sudo apt-get install libncurses5-dev cmake
 user@system:~/ git clone https://github.com/oddquark/flux512
